@@ -1,0 +1,9 @@
+  .steps{
+    margin: 0; 
+    padding:0;
+  }
+  .steps-desc{
+    width: 60%; 
+    margin: 0 0 15px 0; 
+    padding:0;
+  }
