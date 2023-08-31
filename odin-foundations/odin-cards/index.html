@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="https://www.theodinproject.com/assets/icons/odin-icon-b5b31c073f7417a257003166c98cc23743654715305910c068b93a3bf4d3065d.svg" type="image/x-icon">
+  <title>Flex | The Odin Project</title>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="cards">
+      <div class="user">
+        <!-- <img class="profile" src="/images/Jerome.png" alt="Jerome Encinares"> -->
+        <img class="profile" src="https://scontent.fmnl34-1.fna.fbcdn.net/v/t1.6435-1/35242660_1104292603056150_1225408896022085632_n.jpg?stp=dst-jpg_p200x200&_nc_cat=101&ccb=1-7&_nc_sid=7206a8&_nc_eui2=AeFWs_WCikipHQ_HIOSpBGZg3FmfIQ22fQHcWZ8hDbZ9ARBZ0gTCRc55kJcTjm0q41rxxet56wgr3ihgPhjIAySl&_nc_ohc=R-aaz3oewV8AX-hHaDh&_nc_ht=scontent.fmnl34-1.fna&oh=00_AfAziJe6VxwiWWRu6BAcNPF-nV2u6Y9eLKkrFHvWv0bOPg&oe=6517FBF7" alt="Jerome Encinares">
+
+        <div class="user-details"> 
+          <a class="username" target="_blank" href="https://facebook.com/encinares16">Jerome Encinares Talavera</a>
+          <p class="role">Developer &#183; August 31, 2023</p>
+        </div>
+      </div>
+        
+      <h2 class="post-title">Hello, World!</h2>
+      <p class="post-desc">I'm Jerome. This is just a simple post card template that i made. I am currently self-learning basic of web dev. As of now, my skill progress on <span><img class="odin-image" src="https://www.theodinproject.com/assets/icons/odin-icon-b5b31c073f7417a257003166c98cc23743654715305910c068b93a3bf4d3065d.svg" alt="odin"></span> "The Odin Project: Foundations" course is currently on 60%. </p>
+      <p>ps: heart and comments has no functions</p>
+
+      <div class="comments">
+        <textarea id="comments-textarea" class="comments-textarea" name="comments" placeholder="Write a comments..."></textarea>
+        <svg id="comments" onclick="comments()" class="send-svg" width="30px" height="30px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.5003 12H5.41872M5.24634 12.7972L4.24158 15.7986C3.69128 17.4424 3.41613 18.2643 3.61359 18.7704C3.78506 19.21 4.15335 19.5432 4.6078 19.6701C5.13111 19.8161 5.92151 19.4604 7.50231 18.7491L17.6367 14.1886C19.1797 13.4942 19.9512 13.1471 20.1896 12.6648C20.3968 12.2458 20.3968 11.7541 20.1896 11.3351C19.9512 10.8529 19.1797 10.5057 17.6367 9.81135L7.48483 5.24303C5.90879 4.53382 5.12078 4.17921 4.59799 4.32468C4.14397 4.45101 3.77572 4.78336 3.60365 5.22209C3.40551 5.72728 3.67772 6.54741 4.22215 8.18767L5.24829 11.2793C5.34179 11.561 5.38855 11.7019 5.407 11.8459C5.42338 11.9738 5.42321 12.1032 5.40651 12.231C5.38768 12.375 5.34057 12.5157 5.24634 12.7972Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="reactions">
+        <div id="heart" class="heart">
+          <svg  id="heartIcon" onclick="heart()" class="heart-svg" width="20px" height="25px" stroke-opacity="0.0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.7 4C18.87 4 21 6.98 21 9.76C21 15.39 12.16 20 12 20C11.84 20 3 15.39 3 9.76C3 6.98 5.13 4 8.3 4C10.12 4 11.31 4.91 12 5.71C12.69 4.91 13.88 4 15.7 4Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          <p id="heart-counts" class="heart-counts">15</p>
+        </div>
+        <div class="repost">
+          <svg  id="repostIcon" onclick="repostCounts()" class="repost-svg" width="20px" height="20px" viewBox="0 0 24 24" style="fill: none; stroke: rgb(240, 240, 240); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5;" xmlns="http://www.w3.org/2000/svg"   >
+            <path d="M6,14V9A6,6,0,0,1,16.89,5.54"></path>
+            <polyline points="8 12 6 14 4 12"></polyline>
+            <path  d="M18,10v5A6,6,0,0,1,7.11,18.46" ></path>
+            <polyline points="16 12 18 10 20 12" ></polyline></svg>
+          <p id="repost-counts">143</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+      document.getElementById("comments-textarea").disabled = true;
+    function comments(){
+      document.getElementById("comments-textarea").innerHTML = "This is just a card template only.";
+    }
+
+    let repost = document.getElementById("repost-counts");
+    repost.style.color = "rgb(150, 150, 150)";
+
+    let counts = 15;
+
+    function heart(){
+       counts++;
+       document.getElementById("heart-counts").innerHTML = counts;
+       heartIcon.style.fill = "rgb(255, 60, 109)";
+       let heartcounts = document.getElementById("heart-counts");
+        heartcounts.style.color = "rgb(150, 150, 150)";
+        counts--;
+      document.getElementById("heart-counts").disabled = true;
+    }
+    
+    let repostcount = 143;
+    function repostCounts() {
+      // alert("I am clicked");
+      repostcount++;
+      document.getElementById("repost-counts").innerHTML = repostcount;
+      repostIcon.style.stroke = "rgb(50, 100, 250)";
+      repostcount--;
+      document.getElementById("repost-counts").disabled = true;
+    }
+
+  </script>
+</body>
+</html>
