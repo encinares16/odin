@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+
+  <div id="buttons">
+    <input type="button" value="ROCK">
+    <input type="button" value="PAPER">
+    <input type="button" value="SCISSORS">
+  </div>
+  <div id="restart" style="display: none;">
+    <input type="button" value="RESTART" onclick="restartGame()">
+  </div>
+
+  <p class="yourScore"> You: <span id="yourScore">0</span> </p>
+  <p class="computerScore">Computer: <span id="computerScore">0</span></p>
+
+  <p id="result"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
